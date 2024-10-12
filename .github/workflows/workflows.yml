@@ -47,15 +47,15 @@ jobs:
           node-version: '18'
 
       # Build du backend
-      - name: Build Backend
-        working-directory: ./api
+      - name: Build  Frontend
+        working-directory: ./front-office/money-count
         
-        run: npm start
+        run: npm run build
 
       # Build du frontend
-      - name: Build Frontend
-        working-directory: ./front-office/money-count
-        run: npm run build
+      - name: Build Backend
+        working-directory: ./api
+        run: npm start
 
   # Job 3 : Intégrer Snyk pour l'analyse de sécurité
   snyk-security-scan:
